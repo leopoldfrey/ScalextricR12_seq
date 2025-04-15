@@ -1,0 +1,172 @@
+/* Appliquer une police moderne et centrer la page */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+/* Style du titre */
+h1 {
+    color: #333;
+}
+
+/* Style du tableau */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    text-align: center;
+    padding: 4px 10px;
+    border: 0px solid #ddd;
+}
+
+th {
+    background-color: #4C00A7;
+    color: white;
+}
+
+/* Alternance des couleurs des lignes */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Couleur de fond pour les lignes impaires */
+#sequenceBody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Gris clair */
+}
+
+/* Couleur de fond pour les lignes paires */
+#sequenceBody tr:nth-child(even) {
+    background-color: #ffffff; /* Blanc */
+}
+
+/* Ajout d'un effet au survol des lignes */
+#sequenceBody tr:hover {
+    background-color: #fdf8d1; /* Bleu clair */
+}
+
+/* Style des champs de saisie */
+input[type="number"] {
+    width: 80px;
+    padding: 3px;
+    text-align: center;
+    /*border: 1px solid #ccc;
+    border-radius: 4px;*/
+    background: none;
+    border: none;
+}
+
+/* Uniformiser la largeur des champs number et des sliders */
+input[type="number"],
+input[type="range"] {
+    width: 150px; /* Largeur uniforme */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#constantsTable input[type="number"] 
+{
+    width: 80px; /* Largeur spécifique pour les champs de la table des constantes */
+}
+
+/* Uniformiser la largeur des champs number des colonnes min et max */
+td input.speed0-min,
+td input.speed0-max,
+td input.speed1-min,
+td input.speed1-max {
+    width: 150px; /* Largeur uniforme avec les sliders */
+}
+
+/* Conserver la largeur par défaut pour les colonnes Durée et Ramp */
+td input.duration,
+td input.ramp {
+    width: 80px; /* Largeur spécifique pour ces colonnes */
+}
+
+/* Masquer la colonne ramp */
+.hidden {
+    display: none;
+}
+
+/* Style des boutons */
+button:not(.duplicateRowBtn, .deleteRowBtn){
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-step {
+    background-color: #28a745;
+    color: white;
+}
+
+#save-sequence {
+    background-color: #ffc107;
+    color: black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#status-message {
+    position: fixed; /* Position fixe pour rester visible en bas de la page */
+    bottom: 20px; /* Distance par rapport au bas de la page */
+    right: 20px; /* Distance par rapport au côté droit */
+    background-color: #f8f9fa; /* Couleur de fond claire */
+    color: #333; /* Couleur du texte */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    z-index: 1000; /* Assure que le message est au-dessus des autres éléments */
+    display: none; /* Par défaut, caché */
+    font-size: 14px; /* Taille de police */
+    max-width: 300px; /* Largeur maximale */
+    text-align: center; /* Centrer le texte */
+}
+
+.ui-sortable-helper {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+
+#constantsTable {
+    background-color: transparent; /* Pas de fond */
+    width: 400px; /* Réduire la largeur du tableau */
+    margin-top: 20px; /* Ajouter un espace au-dessus */
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+    border: none; /* Supprime les bordures */
+    box-shadow: none; /* Supprime toute ombre */
+}
+
+#constantsTable td {
+    padding: 5px; /* Ajouter un peu d'espace autour des cellules */
+    border: none; /* Supprime les bordures des cellules */
+}
+
+#constantsTable tr {
+    background-color: transparent; /* Pas de fond pour les lignes */
+}
+
+#saveCompileUploadBtn.uploading {
+    background-color: blue;
+    color: white;
+    cursor: not-allowed; /* Désactiver le curseur pour indiquer que le bouton est en cours de traitement */
+}
+
+#totalDurationCell {
+    padding: 12px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R12 - Éditeur de Séquence</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div class="container">
+        <h1>R12 - Éditeur de Séquence</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Pas</th>
+                    <th rowspan="2">Durée (s)</th>
+                    <th colspan="2">Vitesse 1 [0-255]</th>
+                    <th colspan="2">Vitesse 2 [0-255]</th>
+                    <th rowspan="2" class="hidden">Ramp (s)</th>
+                    <th rowspan="2">Fonction</th>
+                </tr>
+                <tr>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                </tr>
+            </thead>
+            <tbody id="sequenceBody">
+                <!-- Les lignes seront ajoutées dynamiquement ici -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="1"><strong>Total:</strong></td>
+                    <td id="totalDurationCell">0.00</td>
+                    <td colspan="6"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button id="addRowBtn">Ajouter un pas</button>
+        <button id="saveSequenceBtn">Sauvegarder</button>
+        <button id="saveCompileUploadBtn">
+            Téléverser <span id="uploadDots"></span>
+        </button>
+    </div>
+
+    <div>
+        <table id="constantsTable">
+            <tr>
+                <td><label for="timeout">Timeout (minutes) :</label></td>
+                <td><input type="number" id="timeout" step="0.1" value="2.5"></td>
+            </tr>
+            <tr>
+                <td><label for="speed0-min">Limites Piste 1 :</label></td>
+                <td><input type="number" id="speed1-min" value=""></td>
+                <td><input type="number" id="speed1-max" value=""></td>
+            </tr>
+            <tr>
+                <td><label for="speed1-min">Limites Piste 2 :</label></td>
+                <td><input type="number" id="speed2-min" value=""></td>
+                <td><input type="number" id="speed2-max" value=""></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Port Arduino :</h2>
+    <select id="arduino-port">
+        <option value="">Sélectionner un port...</option>
+    </select>
+
+    <div id="status-message">
+        <span id="message-text"></span><br>
+        <span id="dots">...</span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
