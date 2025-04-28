@@ -4,10 +4,10 @@
 #include <Arduino.h>
 
 #define TIMEOUT_MN 3
-#define SPEED1_MIN 92
-#define SPEED1_MAX 167
-#define SPEED2_MIN 87
-#define SPEED2_MAX 180
+#define SPEED1_MIN 88
+#define SPEED1_MAX 109
+#define SPEED2_MIN 115
+#define SPEED2_MAX 120
 
 struct Value {
   float valMin;
